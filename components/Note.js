@@ -6,7 +6,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-export default class Main extends React.Component {
+export default class Note extends React.Component {
   render() {
     return (
       <View key={this.props.keyval} style={styles.note}>
