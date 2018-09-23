@@ -12,7 +12,9 @@ export default class Main extends React.Component {
       <View key={this.props.keyval} style={styles.note}>
         <Text style={styles.noteText}> {this.props.val.date} </Text>
         <Text style={styles.noteText}> {this.props.val.note} </Text>
-        
+        <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
+            <Text style={styles.noteDeleteText}>Delete</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -20,16 +22,29 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
     note: {
-        position: 'relative',
+       // position: 'absolute',
         padding: 20,
         paddingRight: 100,
         borderBottomWidth:2,
-        borderBottomColor: '#ededed'
+        borderBottomColor: '#2980B9'
     },
     noteText: {
         paddingLeft: 20,
         borderLeftWidth: 10,
-        borderLeftColor: '#E91E63'
+        borderLeftColor: '#2980B9'
     },
-    
+    noteDelete: {
+        position: 'absolute',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#2980b9',
+        padding: 10,
+        top: 10,
+        bottom: 10,
+        right: 10
+    },
+    noteDeleteText: {
+        color: 'white'
+    }
+
 });

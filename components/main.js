@@ -22,7 +22,10 @@ export default class Main extends React.Component {
 
   render() {
     let notes=this.state.noteArray.map((val,key) => {
-      return< Note key={key} keyval={key} val={val} />
+      return< Note key={key} keyval={key}  val={val}
+      deleteMethod={()=>this.deleteNote(key)}
+      
+      />
     });
 
     
@@ -32,10 +35,11 @@ export default class Main extends React.Component {
         <View style={styles.header}>      
           <Text style={styles.headerText}>Todo List</Text>
         </View>
+
         <ScrollView style={styles.scrollContainer}>
           {notes}
-
         </ScrollView>
+
         <View style={styles.footer}>
           <TextInput 
              style={styles.textInput}
@@ -43,12 +47,16 @@ export default class Main extends React.Component {
              value= {this.state.noteText}
              placeholder= 'notes'
              placeholderTextColor= 'white'
-             underlineColorAndroid='transparent'>
+          >
+          
           </TextInput>
         </View>
-      <TouchableOpacity onPress={this.addNote.bind(this)} style={styles.addButton}>
-          <Text style={styles.addButtonText}>+</Text>
-      </TouchableOpacity>
+
+         <TouchableOpacity onPress={this.addNote.bind(this)} style={styles.addButton}>
+            <Text style={styles.addButtonText}>+</Text>
+
+        </TouchableOpacity>
+      
 
      </View>
     );
@@ -58,9 +66,9 @@ export default class Main extends React.Component {
 
       var d= new Date();
       this.state.noteArray.push({
-        'date': d.getFullYear() +
-        "/" + (d.getMonth() + 1) +
-        "/" + d.getDate(),
+        'date': d.getDate()+
+        "/"+ d.getMonth() +
+        "/"+ d.getFullYear(),
         'note': this.state.noteText
       })
       this.setState({ noteArray: this.state.noteArray})
@@ -76,7 +84,7 @@ const styles = StyleSheet.create({
       flex:1,
   },
   header: {
-    backgroundColor: '#E91E63',
+    backgroundColor: 'rgb(84, 153, 199)',
     alignItems: 'center',
     justifyContent:'center',
     //borderBottomWidth: 10,
@@ -111,7 +119,7 @@ headerText: {
       zIndex: 11,
       right: 20,
       bottom: 90,
-      backgroundColor: '#E91E63',
+      backgroundColor: '#2980B9',
       width: 70,
       height: 70,
       borderRadius: 35,
