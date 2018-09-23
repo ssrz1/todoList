@@ -13,7 +13,7 @@ export default class Main extends React.Component {
         <Text style={styles.noteText}> {this.props.val.date} </Text>
         <Text style={styles.noteText}> {this.props.val.note} </Text>
         <TouchableOpacity onPress={this.props.deleteMethod} style={styles.noteDelete}>
-            <Text style={styles.noteDeleteText}>Delete</Text>
+            <Text style={styles.noteDeleteText}>X</Text>
         </TouchableOpacity>
       </View>
     );
