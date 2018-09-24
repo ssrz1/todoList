@@ -1,13 +1,10 @@
 import React from 'react';
-import main from './components/main'
+import Main from './components/Main'
 export default class App extends React.Component {
   render() {
     return (
-      
+      <Main />
     );
   }
 }
 
-const styles = StyleSheet.create({
- 
-});
