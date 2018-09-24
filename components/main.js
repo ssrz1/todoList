@@ -12,8 +12,19 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-      <Text style={styles.header}>Todo List</Text>
-      </View>
+
+        <View style={styles.header}>      
+          <Text style={styles.headerText}>Todo List</Text>
+        </View>
+        <ScrollView style={styles.scrollContainer}>
+
+        </ScrollView>
+        <View style={styles.footer}>
+          <TextInput style={styles.textInput}> </TextInput>
+        </View>
+
+
+     </View>
     );
   }
 }
@@ -23,6 +34,9 @@ const styles = StyleSheet.create({
    
   },
   header: {
+
+  },
+  headerText: {
 
   },
 });
