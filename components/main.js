@@ -25,10 +25,11 @@ export default class Main extends React.Component {
              placeholder= 'notes'
              placeholderTextColor= 'white'
              underlineColorAndroid='transparent'>
-
           </TextInput>
         </View>
-
+      <TouchableOpacity style={styles.addButton}>
+          <Text style={styles.addButtonText}>+</Text>
+      </TouchableOpacity>
 
      </View>
     );
@@ -82,7 +83,7 @@ headerText: {
       borderRadius: 35,
       alignItems: 'center',
       justifyContent: 'center',
-      elevation: 8
+     // elevation: 8
 },
 addButtonText: {
       color: '#fff',
