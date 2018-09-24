@@ -11,7 +11,9 @@ import {
 export default class Main extends React.Component {
   render() {
     return (
-      <View><Text>Todo List</Text></View>
+      <View style={styles.container}>
+      <Text style={styles.header}>Todo List</Text>
+      </View>
     );
   }
 }
@@ -19,5 +21,8 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
   container: {
    
+  },
+  header: {
+
   },
 });
