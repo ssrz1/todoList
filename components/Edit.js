@@ -8,30 +8,19 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Note from './Note';
-export default class Main extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            noteArray: [],
-            noteText: '',
-        };
-    }
+
+export default class Edit extends Component {
+   
     render() {
-        // Array Mapping and sending it to Note class where they can use through props
-        let notes = this.state.noteArray.map((val, key)=>{
-                return <Note key={key}  val={val}
-                        deleteMethod={()=>this.deleteNote(key)}
-                         EditMethod={()=>this.editNote(key)}
-                     />
-        });
+      
         return (
             <View style={styles.container}>
                 <View style={styles.header}>
                     <Text style={styles.headerText}>- NOTER -</Text>
                 </View>
-                <ScrollView style={styles.scrollContainer}>
+                {/* <ScrollView style={styles.scrollContainer}>
                     {notes}
-                </ScrollView>
+                </ScrollView> */}
                 <View style={styles.footer}>
                     <TextInput 
                         style={styles.textInput}
@@ -63,7 +52,7 @@ export default class Main extends Component {
             //then set state with updated notearray
             this.setState({ noteArray: this.state.noteArray });
             //and clear noteText
-            //this.setState({noteText:''});
+            this.setState({noteText:''});
         }
     }
     deleteNote(key){
@@ -71,15 +60,15 @@ export default class Main extends Component {
         this.setState({noteArray: this.state.noteArray});
     }
 
-   editNote(){
-    if(this.state.noteText){
-        this.state.noteArray.push({
-            'note': this.state.noteText
-        });
-        this.setState({ noteArray: this.state.noteArray });
+//    editNote(){
+//     if(this.state.noteText){
+//         this.state.noteArray.push({
+//             'note': this.state.noteText
+//         });
+//         this.setState({ noteArray: this.state.noteArray });
             
-     }
-   }
+//      }
+//    }
     
 }
 const styles = StyleSheet.create({
